@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  caddy:
+    image: caddy:alpine
+    container_name: main-proxy
+    ports:
+      - "8080:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - playlab
+
+  playlab:
+    build:
+      context: ../blayblay-playlab # 👈 แก้ตรงนี้เป็นชื่อโฟลเดอร์ของคุณ
+      dockerfile: Dockerfile
+    container_name: playlab
+    ports:
+      - "8083:8083"
+    environment:
+      - PORT=8083
