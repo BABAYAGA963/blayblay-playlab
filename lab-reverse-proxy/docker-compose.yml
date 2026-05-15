@@ -17,6 +17,4 @@ services:
       dockerfile: Dockerfile
     container_name: playlab
     ports:
-      - "8083:8083"
-    environment:
-      - PORT=8083
+      - "8083:3000"
