@@ -39,7 +39,7 @@ const courses = [
     tagColor: "bg-emerald-100 text-emerald-700 border border-emerald-200",
     duration: "8 ชั่วโมง",
     students: "120+ คน",
-    icon: <Server size={28} />,
+    icon: Server,
     gradient: "from-orange-400 via-amber-300 to-yellow-200",
     accentDot: "bg-orange-400",
     category: "Infrastructure",
@@ -52,7 +52,7 @@ const courses = [
     tagColor: "bg-emerald-100 text-emerald-700 border border-emerald-200",
     duration: "10 ชั่วโมง",
     students: "98+ คน",
-    icon: <Wifi size={28} />,
+    icon: Wifi,
     gradient: "from-sky-400 via-cyan-300 to-teal-200",
     accentDot: "bg-sky-400",
     category: "IoT",
@@ -65,7 +65,7 @@ const courses = [
     tagColor: "bg-purple-100 text-purple-700 border border-purple-200",
     duration: "12 ชั่วโมง",
     students: "64+ คน",
-    icon: <BrainCircuit size={28} />,
+    icon: BrainCircuit,
     gradient: "from-purple-500 via-fuchsia-400 to-pink-300",
     accentDot: "bg-purple-500",
     category: "AI / ML",
@@ -78,7 +78,7 @@ const courses = [
     tagColor: "bg-amber-100 text-amber-700 border border-amber-200",
     duration: "16 ชั่วโมง",
     students: "42+ คน",
-    icon: <Cpu size={28} />,
+    icon: Cpu,
     gradient: "from-rose-400 via-orange-300 to-amber-200",
     accentDot: "bg-rose-400",
     category: "Robotics",
@@ -89,28 +89,28 @@ const stats = [
   {
     value: "500+",
     label: "นักเรียนทั้งหมด",
-    icon: <Users size={28} />,
+    icon: Users,
     color: "text-[#9A3B06]",
     bg: "bg-[#F3E5C8]",
   },
   {
     value: "50+",
     label: "Workshop จัดไปแล้ว",
-    icon: <Calendar size={28} />,
+    icon: Calendar,
     color: "text-sky-600",
     bg: "bg-sky-50",
   },
   {
     value: "20+",
     label: "โปรเจกต์สำเร็จ",
-    icon: <Trophy size={28} />,
+    icon: Trophy,
     color: "text-purple-600",
     bg: "bg-purple-50",
   },
   {
     value: "5 ปี",
     label: "ประสบการณ์",
-    icon: <Star size={28} />,
+    icon: Star,
     color: "text-emerald-600",
     bg: "bg-emerald-50",
   },
@@ -118,7 +118,7 @@ const stats = [
 
 const features = [
   {
-    icon: <Lightbulb size={32} />,
+    icon: Lightbulb,
     title: "เรียนแบบ Project-based",
     desc: "ทุกคอร์สมีโปรเจกต์จริงให้ทำ ไม่ใช่แค่ดูสไลด์ คุณจะได้ลงมือสร้างชิ้นงานของตัวเองกลับบ้านทุกครั้ง",
     color: "text-[#9A3B06]",
@@ -126,7 +126,7 @@ const features = [
     border: "border-[#E8DCC2]",
   },
   {
-    icon: <Users size={32} />,
+    icon: Users,
     title: "กลุ่มเล็ก ดูแลใกล้ชิด",
     desc: "จำกัดไม่เกิน 8 คนต่อรอบ ทำให้ผู้สอนดูแลได้ทั่วถึงและตอบคำถามได้ทันที",
     color: "text-sky-600",
@@ -134,7 +134,7 @@ const features = [
     border: "border-sky-100",
   },
   {
-    icon: <Shield size={32} />,
+    icon: Shield,
     title: "เหมาะกับทุกระดับ",
     desc: "ไม่ต้องมีพื้นฐานการเขียนโค้ด เราออกแบบหลักสูตรให้เข้าใจได้ตั้งแต่ต้นจนจบ",
     color: "text-emerald-600",
@@ -142,7 +142,7 @@ const features = [
     border: "border-emerald-100",
   },
   {
-    icon: <Heart size={32} />,
+    icon: Heart,
     title: "ชุมชนที่อบอุ่น",
     desc: "เรียนจบแล้วยังมีกลุ่ม Community สำหรับแชร์ไอเดียและช่วยเหลือกัน ไม่ทิ้งกันแน่นอน",
     color: "text-rose-500",
@@ -509,7 +509,7 @@ export default function PlayLabLandingPage() {
               <div
                 className={`w-14 h-14 rounded-2xl ${stat.bg} flex items-center justify-center mx-auto mb-4 ${stat.color} group-hover:scale-110 transition-transform duration-300`}
               >
-                {stat.icon}
+                <stat.icon size={28} />
               </div>
               <div className="text-4xl font-black text-[#7A3612] mb-1">
                 {stat.value}
@@ -564,7 +564,7 @@ export default function PlayLabLandingPage() {
                   className={`h-44 bg-gradient-to-br ${course.gradient} relative overflow-hidden flex items-center justify-center`}
                 >
                   <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg border border-white/30">
-                    {course.icon}
+                    <course.icon size={28} />
                   </div>
                   {/* Category label */}
                   <div className="absolute top-3 left-3 bg-white/90 text-[#7A3612] text-xs font-bold px-2.5 py-1 rounded-full shadow-sm">
@@ -659,7 +659,7 @@ export default function PlayLabLandingPage() {
               <div
                 className={`w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-5 shadow-sm ${feat.color} group-hover:scale-110 transition-transform duration-300`}
               >
-                {feat.icon}
+                <feat.icon size={32} />
               </div>
               <h3 className="text-lg font-bold text-[#7A3612] mb-2">
                 {feat.title}
@@ -1048,14 +1048,38 @@ export default function PlayLabLandingPage() {
               </p>
               {/* Social icons */}
               <div className="flex gap-3">
-                {["FB", "IG", "YT", "TK"].map((s) => (
-                  <button
-                    key={s}
-                    className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#9A3B06] text-white/70 hover:text-white text-xs font-bold transition-all duration-200"
-                  >
-                    {s}
-                  </button>
-                ))}
+                <a
+                  href="https://www.facebook.com/blayblayboardgame"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#9A3B06] text-white/70 hover:text-white text-xs font-bold transition-all duration-200 flex items-center justify-center"
+                >
+                  FB
+                </a>
+                <a
+                  href="https://www.instagram.com/blayblay_playwork"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#9A3B06] text-white/70 hover:text-white text-xs font-bold transition-all duration-200 flex items-center justify-center"
+                >
+                  IG
+                </a>
+                <a
+                  href="https://line.me/ti/g2/UMChaAeRCHCi8WiD0rlVOYpYTa8eD74fA6H72w"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#9A3B06] text-white/70 hover:text-white text-xs font-bold transition-all duration-200 flex items-center justify-center"
+                >
+                  LINE
+                </a>
+                <a
+                  href="https://www.tiktok.com/@blayblay_playwork"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#9A3B06] text-white/70 hover:text-white text-xs font-bold transition-all duration-200 flex items-center justify-center"
+                >
+                  TK
+                </a>
               </div>
             </div>
 
@@ -1116,19 +1140,36 @@ export default function PlayLabLandingPage() {
                 </h4>
                 <ul className="space-y-3 text-white/60 text-sm">
                   <li className="flex items-center gap-2.5">
-                    <Phone size={14} className="text-[#9A3B06] shrink-0" />{" "}
-                    096-xxx-xxxx
+                    <Phone size={14} className="text-[#9A3B06] shrink-0" />
+                    <a
+                      href="tel:0837278422"
+                      className="hover:text-[#F3A96A] transition-colors"
+                    >
+                      083-727-8422
+                    </a>
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Mail size={14} className="text-[#9A3B06] shrink-0" />{" "}
-                    hello@playlab.co.th
+                    <Mail size={14} className="text-[#9A3B06] shrink-0" />
+                    <a
+                      href="mailto:blayblayplaywork@gmail.com"
+                      className="hover:text-[#F3A96A] transition-colors"
+                    >
+                      blayblayplaywork@gmail.com
+                    </a>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <MapPin
                       size={14}
                       className="text-[#9A3B06] shrink-0 mt-0.5"
                     />
-                    123 ถนนเทคโนโลยี แขวงลาดพร้าว กทม. 10230
+                    <a
+                      href="https://www.bing.com/maps/search?q=22%2F10+%E0%B8%96.+%E0%B8%8A%E0%B8%B2%E0%B8%81%E0%B8%B1%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A7%2C+Kamphaeng+Phet%2C+Thailand%2C+62000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#F3A96A] transition-colors"
+                    >
+                      22/10 ถ.ชากังราว กำแพงเพชร 62000
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -1137,7 +1178,7 @@ export default function PlayLabLandingPage() {
                   <Clock size={14} /> เวลาเปิดทำการ
                 </h4>
                 <ul className="space-y-1.5 text-white/60 text-sm">
-                  <li>จันทร์ – อังคาร, พฤหัส – ศุกร์: 10:00 – 20:00</li>
+                  <li>จันทร์ – ศุกร์: 10:00 – 21:00</li>
                   <li>เสาร์ – อาทิตย์: 10:00 – 18:00</li>
                   <li className="text-[#F3A96A] font-semibold">
                     🚫 หยุดทุกวันพุธ
