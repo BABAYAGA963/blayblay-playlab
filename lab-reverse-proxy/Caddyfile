@@ -1,4 +1,3 @@
 :80 {
-    # ตอบโจทย์: /playlab -> playlab :8083
-    reverse_proxy /playlab* playlab:8083
+    reverse_proxy playlab:8083
 }

@@ -13,7 +13,7 @@ services:
 
   playlab:
     build:
-      context: ../blayblay-playlab # 👈 แก้ตรงนี้เป็นชื่อโฟลเดอร์ของคุณ
+      context: ..
       dockerfile: Dockerfile
     container_name: playlab
     ports:
