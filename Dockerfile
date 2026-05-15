@@ -1,10 +1,10 @@
 FROM node:20-alpine AS base
 WORKDIR /app
 
-COPY package.json package-lock.json* ./
+COPY blayblay-playlab/package.json blayblay-playlab/package-lock.json* ./
 RUN npm install
 
-COPY . .
+COPY blayblay-playlab/ ./
 
 RUN npm run build
 
