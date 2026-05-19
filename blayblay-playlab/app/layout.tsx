@@ -12,9 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// เพิ่มบล็อก icons เข้าไปใน metadata ตรงนี้แล้วครับ 🎯
 export const metadata: Metadata = {
   title: "PlayLab",
   description: "พื้นที่ทดลองไอเดีย พัฒนา IoT, Robot และ AI",
+  icons: {
+    icon: "/icon.png", // Next.js จะวิ่งไปหาไฟล์ icon.png ในโฟลเดอร์ app มาทำเป็น Favicon
+  },
 };
 
 export default function RootLayout({
